@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySpace.com | Tom's Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+        }
+        
+        .top-nav {
+            background: linear-gradient(to bottom, #6699cc, #3366cc);
+            color: white;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border: 2px solid #3366cc;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .profile-header {
+            background: linear-gradient(to right, #87CEEB, #4682B4);
+            padding: 20px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .profile-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .profile-status {
+            font-style: italic;
+            font-size: 14px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .profile-pic {
+            border: 3px solid #3366cc;
+            background: white;
+            padding: 10px;
+        }
+        
+        .profile-pic img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+        }
+        
+        .info-box {
+            background: #f0f8ff;
+            border: 2px solid #3366cc;
+            padding: 15px;
+        }
+        
+        .info-box h3 {
+            color: #3366cc;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border-bottom: 2px solid #3366cc;
+            padding-bottom: 5px;
+        }
+        
+        .info-row {
+            display: flex;
+            margin: 8px 0;
+            font-size: 12px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            width: 100px;
+            color: #333;
+        }
+        
+        .content-section {
+            background: #f0f8ff;
+            border: 2px solid #3366cc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .content-section h2 {
+            color: #3366cc;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3366cc;
+            padding-bottom: 5px;
+        }
+        
+        .friends-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .friend-item {
+            text-align: center;
+            background: white;
+            padding: 10px;
+            border: 1px solid #3366cc;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .friend-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .friend-pic {
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+        }
+        
+        .friend-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: #3366cc;
+        }
+        
+        .comment {
+            background: white;
+            border: 1px solid #3366cc;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .comment-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comment-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            border: 2px solid #3366cc;
+        }
+        
+        .comment-author {
+            font-weight: bold;
+            color: #3366cc;
+            font-size: 14px;
+        }
+        
+        .comment-date {
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .comment-text {
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .music-player {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+        
+        .music-player h4 {
+            margin-bottom: 10px;
+        }
+        
+        .player-controls {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        button {
+            background: #3366cc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+        
+        button:hover {
+            background: #2952a3;
+        }
+        
+        .blurbs {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="#" class="logo">MySpace.com</a>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Browse</a>
+            <a href="#">Search</a>
+            <a href="#">Invite</a>
+            <a href="#">Mail</a>
+            <a href="#">Blog</a>
+            <a href="#">Favorites</a>
+            <a href="#">Forum</a>
+            <a href="#">Groups</a>
+            <a href="#">Events</a>
+            <a href="#">Videos</a>
+            <a href="#">Music</a>
+            <a href="#">Comedy</a>
+            <a href="#">Classifieds</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="profile-header">
+            <div class="profile-name">Tom Anderson</div>
+            <div class="profile-status">"Thanks for the add!"</div>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="profile-pic">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Crect fill='%23667eea' width='280' height='280'/%3E%3Ctext x='50%25' y='50%25' font-size='80' fill='white' text-anchor='middle' dy='.3em'%3E👤%3C/text%3E%3C/svg%3E" alt="Profile Picture">
+                </div>
+
+                <div class="info-box">
+                    <h3>Tom's Details</h3>
+                    <div class="info-row">
+                        <span class="info-label">Status:</span>
+                        <span>Single</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Here for:</span>
+                        <span>Friends</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Hometown:</span>
+                        <span>Los Angeles</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Zodiac:</span>
+                        <span>Scorpio</span>
+                    </div>
+                </div>
+
+                <div class="music-player">
+                    <h4>♪ My Profile Song ♪</h4>
+                    <div>Dashboard Confessional - Hands Down</div>
+                    <div class="player-controls">
+                        <button onclick="alert('🎵 Now playing...')">▶ Play</button>
+                        <button onclick="alert('⏸ Paused')">⏸ Pause</button>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h3>Contacting Tom</h3>
+                    <button onclick="alert('Message sent!')">Send Message</button>
+                    <button onclick="alert('Added to friends!')">Add to Friends</button>
+                    <button onclick="alert('Poked!')">Poke</button>
+                </div>
+            </div>
+
+            <div class="main-area">
+                <div class="content-section">
+                    <h2>About Me:</h2>
+                    <div class="blurbs">
+                        <p>Hey everyone! I'm Tom, and I created MySpace to help people connect with their friends and meet new people. I love music, photography, and bringing people together online. Feel free to add me - I accept everyone!</p>
+                        <p style="margin-top: 10px;">When I'm not working on MySpace, you can find me taking photos, going to concerts, or hanging out with friends. This site is all about YOU expressing yourself and connecting with others!</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Tom's Top 8 Friends</h2>
+                    <div class="friends-grid">
+                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
+                            <div class="friend-pic">👨</div>
+                            <div class="friend-name">Chris</div>
+                        </div>
+                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
+                            <div class="friend-pic">👩</div>
+                            <div class="friend-name">Jessica</div>
+                        </div>
+                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
+                            <div class="friend-pic">👨</div>
+                            <div class="friend-name">Mike</div>
+                        </div>
+                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
+                            <div class="friend-pic">👩</div>
+                            <div class="friend-name">Sarah</div>
+                        </div>
+                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
+                            <div class="friend-pic">👨</div>
+                            <div class="friend-name">Brandon</div>
+                        </div>
+                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
+                            <div class="friend-pic">👩</div>
+                            <div class="friend-name">Emily</div>
+                        </div>
+                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
+                            <div class="friend-pic">👨</div>
+                            <div class="friend-name">Justin</div>
+                        </div>
+                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
+                            <div class="friend-pic">👩</div>
+                            <div class="friend-name">Ashley</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Tom's Comments (Showing 3 of 1,547)</h2>
+                    
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-avatar">👩</div>
+                            <div>
+                                <div class="comment-author">Jessica</div>
+                                <div class="comment-date">2 hours ago</div>
+                            </div>
+                        </div>
+                        <div class="comment-text">
+                            Hey Tom! Thanks for accepting my friend request! Your profile looks awesome! Check out mine when you get a chance! 💕
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-avatar">👨</div>
+                            <div>
+                                <div class="comment-author">Mike</div>
+                                <div class="comment-date">Yesterday</div>
+                            </div>
+                        </div>
+                        <div class="comment-text">
+                            Dude, that concert last night was EPIC! We need to hang out more often. Hit me up on AIM later! 🎸
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-avatar">👩</div>
+                            <div>
+                                <div class="comment-author">Sarah</div>
+                                <div class="comment-date">3 days ago</div>
+                            </div>
+                        </div>
+                        <div class="comment-text">
+                            OMG I love your profile song! Dashboard Confessional is the best! We have such similar taste in music! 🎵
+                        </div>
+                    </div>
+
+                    <button onclick="alert('View all comments')">View All Comments</button>
+                    <button onclick="alert('Leave a comment!')">Leave a Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
