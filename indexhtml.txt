@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MySpace.com | Tom's Profile</title>
+    <title>HalalSphere Site Plan</title>
     <style>
         * {
             margin: 0;
@@ -12,423 +12,765 @@
         }
         
         body {
-            font-family: Arial, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            background-attachment: fixed;
-        }
-        
-        .top-nav {
-            background: linear-gradient(to bottom, #6699cc, #3366cc);
-            color: white;
-            padding: 8px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-        }
-        
-        .nav-links a:hover {
-            text-decoration: underline;
+            padding: 20px;
+            overflow-x: hidden;
         }
         
         .container {
-            max-width: 1200px;
-            margin: 20px auto;
+            max-width: 1400px;
+            margin: 0 auto;
             background: white;
-            border: 2px solid #3366cc;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
         
-        .profile-header {
-            background: linear-gradient(to right, #87CEEB, #4682B4);
-            padding: 20px;
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            padding: 30px;
+            text-align: center;
         }
         
-        .profile-name {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 5px;
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
-        .profile-status {
-            font-style: italic;
-            font-size: 14px;
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
         }
         
-        .main-content {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 20px;
+        .site-plan-container {
+            padding: 40px;
+            background: #f8f9fa;
+        }
+        
+        .site-plan {
+            background: white;
+            border: 3px solid #2a5298;
+            border-radius: 15px;
             padding: 20px;
+            position: relative;
+            aspect-ratio: 16/10;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .sidebar {
+        .zone {
+            position: absolute;
+            border: 2px solid;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 0.85em;
+            font-weight: bold;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-        }
-        
-        .profile-pic {
-            border: 3px solid #3366cc;
-            background: white;
-            padding: 10px;
-        }
-        
-        .profile-pic img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border: 1px solid #ccc;
-        }
-        
-        .info-box {
-            background: #f0f8ff;
-            border: 2px solid #3366cc;
-            padding: 15px;
-        }
-        
-        .info-box h3 {
-            color: #3366cc;
-            margin-bottom: 10px;
-            font-size: 16px;
-            border-bottom: 2px solid #3366cc;
-            padding-bottom: 5px;
-        }
-        
-        .info-row {
-            display: flex;
-            margin: 8px 0;
-            font-size: 12px;
-        }
-        
-        .info-label {
-            font-weight: bold;
-            width: 100px;
-            color: #333;
-        }
-        
-        .content-section {
-            background: #f0f8ff;
-            border: 2px solid #3366cc;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .content-section h2 {
-            color: #3366cc;
-            font-size: 18px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #3366cc;
-            padding-bottom: 5px;
-        }
-        
-        .friends-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .friend-item {
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            background: white;
-            padding: 10px;
-            border: 1px solid #3366cc;
+            transition: all 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .zone:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        
+        .zone-title {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+        
+        .zone-size {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        /* Food & Beverage Zone */
+        .food-zone {
+            top: 5%;
+            left: 5%;
+            width: 35%;
+            height: 35%;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+            border-color: #CC5555;
+            color: white;
+        }
+        
+        /* Meat & Poultry Zone */
+        .meat-zone {
+            top: 5%;
+            left: 42%;
+            width: 28%;
+            height: 35%;
+            background: linear-gradient(135deg, #E74C3C 0%, #F1948A 100%);
+            border-color: #C0392B;
+            color: white;
+        }
+        
+        /* Pharmaceutical Zone */
+        .pharma-zone {
+            top: 5%;
+            left: 72%;
+            width: 23%;
+            height: 25%;
+            background: linear-gradient(135deg, #3498DB 0%, #5DADE2 100%);
+            border-color: #2471A3;
+            color: white;
+        }
+        
+        /* Cosmetics Zone */
+        .cosmetic-zone {
+            top: 32%;
+            left: 72%;
+            width: 23%;
+            height: 20%;
+            background: linear-gradient(135deg, #9B59B6 0%, #BB8FCE 100%);
+            border-color: #7D3C98;
+            color: white;
+        }
+        
+        /* Consumer Goods Zone */
+        .consumer-zone {
+            top: 54%;
+            left: 72%;
+            width: 23%;
+            height: 20%;
+            background: linear-gradient(135deg, #F39C12 0%, #F8C471 100%);
+            border-color: #CA6F1E;
+            color: white;
+        }
+        
+        /* SME Hub */
+        .sme-zone {
+            top: 76%;
+            left: 72%;
+            width: 23%;
+            height: 19%;
+            background: linear-gradient(135deg, #16A085 0%, #48C9B0 100%);
+            border-color: #117A65;
+            color: white;
+        }
+        
+        /* Logistics & Warehousing */
+        .logistics-zone {
+            top: 42%;
+            left: 5%;
+            width: 35%;
+            height: 28%;
+            background: linear-gradient(135deg, #34495E 0%, #5D6D7E 100%);
+            border-color: #2C3E50;
+            color: white;
+        }
+        
+        /* R&D Labs */
+        .rd-zone {
+            top: 42%;
+            left: 42%;
+            width: 14%;
+            height: 13%;
+            background: linear-gradient(135deg, #8E44AD 0%, #A569BD 100%);
+            border-color: #6C3483;
+            color: white;
+        }
+        
+        /* Training & Education */
+        .training-zone {
+            top: 57%;
+            left: 42%;
+            width: 14%;
+            height: 13%;
+            background: linear-gradient(135deg, #27AE60 0%, #52BE80 100%);
+            border-color: #1E8449;
+            color: white;
+        }
+        
+        /* Convention Center */
+        .convention-zone {
+            top: 42%;
+            left: 58%;
+            width: 12%;
+            height: 13%;
+            background: linear-gradient(135deg, #E67E22 0%, #EB984E 100%);
+            border-color: #CA6F1E;
+            color: white;
+        }
+        
+        /* Common Areas */
+        .common-zone {
+            top: 57%;
+            left: 58%;
+            width: 12%;
+            height: 13%;
+            background: linear-gradient(135deg, #1ABC9C 0%, #48C9B0 100%);
+            border-color: #148F77;
+            color: white;
+        }
+        
+        /* Admin & Services */
+        .admin-zone {
+            top: 72%;
+            left: 42%;
+            width: 28%;
+            height: 23%;
+            background: linear-gradient(135deg, #95A5A6 0%, #BDC3C7 100%);
+            border-color: #7F8C8D;
+            color: white;
+        }
+        
+        /* Main Entrance */
+        .entrance {
+            top: 76%;
+            left: 5%;
+            width: 35%;
+            height: 19%;
+            background: linear-gradient(135deg, #2ECC71 0%, #58D68D 100%);
+            border-color: #27AE60;
+            color: white;
+        }
+        
+        /* Compass */
+        .compass {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 3px solid #2a5298;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #2a5298;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 20;
+        }
+        
+        .compass::before {
+            content: '▲';
+            position: absolute;
+            top: 5px;
+            font-size: 20px;
+            color: #E74C3C;
+        }
+        
+        .scale {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 2px solid #2a5298;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 20;
+        }
+        
+        .legend {
+            margin-top: 30px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .legend h3 {
+            color: #2a5298;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 8px;
+            background: #f8f9fa;
             transition: transform 0.2s;
         }
         
-        .friend-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        .legend-item:hover {
+            transform: translateX(5px);
         }
         
-        .friend-pic {
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .legend-color {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            margin-right: 15px;
+            border: 2px solid rgba(0,0,0,0.1);
+        }
+        
+        .legend-text {
+            flex: 1;
+        }
+        
+        .legend-text strong {
+            display: block;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+        
+        .legend-text span {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        .stats {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            font-size: 40px;
-        }
-        
-        .friend-name {
-            font-size: 12px;
-            font-weight: bold;
-            color: #3366cc;
-        }
-        
-        .comment {
-            background: white;
-            border: 1px solid #3366cc;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .comment-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .comment-avatar {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            border: 2px solid #3366cc;
-        }
-        
-        .comment-author {
-            font-weight: bold;
-            color: #3366cc;
-            font-size: 14px;
-        }
-        
-        .comment-date {
-            font-size: 11px;
-            color: #666;
-        }
-        
-        .comment-text {
-            font-size: 13px;
-            line-height: 1.5;
-        }
-        
-        .music-player {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 15px;
-            color: white;
+            padding: 20px;
+            border-radius: 12px;
             text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        .music-player h4 {
-            margin-bottom: 10px;
+        .stat-card h4 {
+            font-size: 2em;
+            margin-bottom: 5px;
         }
         
-        .player-controls {
-            background: rgba(255,255,255,0.2);
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
+        .stat-card p {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .info-panel {
+            position: fixed;
+            right: -400px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 380px;
+            background: white;
+            border-radius: 15px 0 0 15px;
+            padding: 25px;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.3);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            max-height: 80vh;
+            overflow-y: auto;
         }
         
-        button {
-            background: #3366cc;
+        .info-panel.active {
+            right: 0;
+        }
+        
+        .info-panel h3 {
+            color: #2a5298;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .info-panel .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e74c3c;
             color: white;
             border: none;
-            padding: 8px 16px;
-            margin: 5px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
             cursor: pointer;
-            font-size: 12px;
-            border-radius: 3px;
+            font-size: 18px;
         }
         
-        button:hover {
-            background: #2952a3;
-        }
-        
-        .blurbs {
-            font-size: 13px;
+        .info-content {
             line-height: 1.6;
-            color: #333;
+            color: #2c3e50;
+        }
+        
+        .info-content p {
+            margin-bottom: 10px;
+        }
+        
+        .info-content strong {
+            color: #2a5298;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .zone {
+                font-size: 0.6em;
+            }
+            
+            .legend-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-panel {
+                width: 100%;
+                right: -100%;
+                border-radius: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="top-nav">
-        <a href="#" class="logo">MySpace.com</a>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Browse</a>
-            <a href="#">Search</a>
-            <a href="#">Invite</a>
-            <a href="#">Mail</a>
-            <a href="#">Blog</a>
-            <a href="#">Favorites</a>
-            <a href="#">Forum</a>
-            <a href="#">Groups</a>
-            <a href="#">Events</a>
-            <a href="#">Videos</a>
-            <a href="#">Music</a>
-            <a href="#">Comedy</a>
-            <a href="#">Classifieds</a>
-        </div>
-    </div>
-
     <div class="container">
-        <div class="profile-header">
-            <div class="profile-name">Tom Anderson</div>
-            <div class="profile-status">"Thanks for the add!"</div>
+        <div class="header">
+            <h1>🕌 HalalSphere Global Technology Park</h1>
+            <p>500 Acres Master Site Plan - Manufacturing-Centric Integrated Halal Ecosystem</p>
         </div>
-
-        <div class="main-content">
-            <div class="sidebar">
-                <div class="profile-pic">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Crect fill='%23667eea' width='280' height='280'/%3E%3Ctext x='50%25' y='50%25' font-size='80' fill='white' text-anchor='middle' dy='.3em'%3E👤%3C/text%3E%3C/svg%3E" alt="Profile Picture">
+        
+        <div class="site-plan-container">
+            <div class="site-plan">
+                <div class="compass">N</div>
+                <div class="scale">Scale: 1:5000</div>
+                
+                <!-- Manufacturing Zones (350 Acres - 70%) -->
+                <div class="zone food-zone" onclick="showInfo('food')">
+                    <div class="zone-title">🍽️ Food & Beverage Zone</div>
+                    <div class="zone-size">120 Acres (24%)</div>
+                    <div class="zone-size">100+ Companies</div>
                 </div>
-
-                <div class="info-box">
-                    <h3>Tom's Details</h3>
-                    <div class="info-row">
-                        <span class="info-label">Status:</span>
-                        <span>Single</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">Here for:</span>
-                        <span>Friends</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">Hometown:</span>
-                        <span>Los Angeles</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label">Zodiac:</span>
-                        <span>Scorpio</span>
-                    </div>
+                
+                <div class="zone meat-zone" onclick="showInfo('meat')">
+                    <div class="zone-title">🥩 Meat & Poultry Zone</div>
+                    <div class="zone-size">80 Acres (16%)</div>
+                    <div class="zone-size">30+ Companies</div>
                 </div>
-
-                <div class="music-player">
-                    <h4>♪ My Profile Song ♪</h4>
-                    <div>Dashboard Confessional - Hands Down</div>
-                    <div class="player-controls">
-                        <button onclick="alert('🎵 Now playing...')">▶ Play</button>
-                        <button onclick="alert('⏸ Paused')">⏸ Pause</button>
-                    </div>
+                
+                <div class="zone pharma-zone" onclick="showInfo('pharma')">
+                    <div class="zone-title">💊 Pharmaceutical Zone</div>
+                    <div class="zone-size">50 Acres (10%)</div>
+                    <div class="zone-size">40+ Companies</div>
                 </div>
-
-                <div class="info-box">
-                    <h3>Contacting Tom</h3>
-                    <button onclick="alert('Message sent!')">Send Message</button>
-                    <button onclick="alert('Added to friends!')">Add to Friends</button>
-                    <button onclick="alert('Poked!')">Poke</button>
+                
+                <div class="zone cosmetic-zone" onclick="showInfo('cosmetic')">
+                    <div class="zone-title">💄 Cosmetics & Personal Care</div>
+                    <div class="zone-size">40 Acres (8%)</div>
+                    <div class="zone-size">60+ Companies</div>
+                </div>
+                
+                <div class="zone consumer-zone" onclick="showInfo('consumer')">
+                    <div class="zone-title">📦 Consumer Goods Zone</div>
+                    <div class="zone-size">40 Acres (8%)</div>
+                    <div class="zone-size">50+ Companies</div>
+                </div>
+                
+                <div class="zone sme-zone" onclick="showInfo('sme')">
+                    <div class="zone-title">🚀 SME Innovation Hub</div>
+                    <div class="zone-size">20 Acres (4%)</div>
+                    <div class="zone-size">50+ Startups</div>
+                </div>
+                
+                <!-- Support Facilities (150 Acres - 30%) -->
+                <div class="zone logistics-zone" onclick="showInfo('logistics')">
+                    <div class="zone-title">🚛 Logistics & Warehousing</div>
+                    <div class="zone-size">80 Acres (16%)</div>
+                    <div class="zone-size">Cold Chain & Storage</div>
+                </div>
+                
+                <div class="zone rd-zone" onclick="showInfo('rd')">
+                    <div class="zone-title">🔬 R&D Labs</div>
+                    <div class="zone-size">10 Acres (2%)</div>
+                </div>
+                
+                <div class="zone training-zone" onclick="showInfo('training')">
+                    <div class="zone-title">🎓 Training Center</div>
+                    <div class="zone-size">15 Acres (3%)</div>
+                </div>
+                
+                <div class="zone convention-zone" onclick="showInfo('convention')">
+                    <div class="zone-title">🏛️ Convention Center</div>
+                    <div class="zone-size">15,000 sq ft</div>
+                </div>
+                
+                <div class="zone common-zone" onclick="showInfo('common')">
+                    <div class="zone-title">🌳 Common Areas</div>
+                    <div class="zone-size">40 Acres (8%)</div>
+                </div>
+                
+                <div class="zone admin-zone" onclick="showInfo('admin')">
+                    <div class="zone-title">🏢 Admin & Services</div>
+                    <div class="zone-size">5 Acres (1%)</div>
+                    <div class="zone-size">Certification, Management</div>
+                </div>
+                
+                <div class="zone entrance" onclick="showInfo('entrance')">
+                    <div class="zone-title">🚪 Main Entrance & Access</div>
+                    <div class="zone-size">Security, Reception, Main Gate</div>
                 </div>
             </div>
-
-            <div class="main-area">
-                <div class="content-section">
-                    <h2>About Me:</h2>
-                    <div class="blurbs">
-                        <p>Hey everyone! I'm Tom, and I created MySpace to help people connect with their friends and meet new people. I love music, photography, and bringing people together online. Feel free to add me - I accept everyone!</p>
-                        <p style="margin-top: 10px;">When I'm not working on MySpace, you can find me taking photos, going to concerts, or hanging out with friends. This site is all about YOU expressing yourself and connecting with others!</p>
-                    </div>
-                </div>
-
-                <div class="content-section">
-                    <h2>Tom's Top 8 Friends</h2>
-                    <div class="friends-grid">
-                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
-                            <div class="friend-pic">👨</div>
-                            <div class="friend-name">Chris</div>
-                        </div>
-                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
-                            <div class="friend-pic">👩</div>
-                            <div class="friend-name">Jessica</div>
-                        </div>
-                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
-                            <div class="friend-pic">👨</div>
-                            <div class="friend-name">Mike</div>
-                        </div>
-                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
-                            <div class="friend-pic">👩</div>
-                            <div class="friend-name">Sarah</div>
-                        </div>
-                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
-                            <div class="friend-pic">👨</div>
-                            <div class="friend-name">Brandon</div>
-                        </div>
-                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
-                            <div class="friend-pic">👩</div>
-                            <div class="friend-name">Emily</div>
-                        </div>
-                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
-                            <div class="friend-pic">👨</div>
-                            <div class="friend-name">Justin</div>
-                        </div>
-                        <div class="friend-item" onclick="alert('Viewing friend profile...')">
-                            <div class="friend-pic">👩</div>
-                            <div class="friend-name">Ashley</div>
+            
+            <div class="legend">
+                <h3>Zone Details & Facilities</h3>
+                <div class="legend-grid">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(135deg, #FF6B6B, #FF8E8E);"></div>
+                        <div class="legend-text">
+                            <strong>Food & Beverage</strong>
+                            <span>Dairy, Beverages, Processed Foods</span>
                         </div>
                     </div>
-                </div>
-
-                <div class="content-section">
-                    <h2>Tom's Comments (Showing 3 of 1,547)</h2>
                     
-                    <div class="comment">
-                        <div class="comment-header">
-                            <div class="comment-avatar">👩</div>
-                            <div>
-                                <div class="comment-author">Jessica</div>
-                                <div class="comment-date">2 hours ago</div>
-                            </div>
-                        </div>
-                        <div class="comment-text">
-                            Hey Tom! Thanks for accepting my friend request! Your profile looks awesome! Check out mine when you get a chance! 💕
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(135deg, #E74C3C, #F1948A);"></div>
+                        <div class="legend-text">
+                            <strong>Meat & Poultry</strong>
+                            <span>Slaughterhouse, Processing, Cold Chain</span>
                         </div>
                     </div>
-
-                    <div class="comment">
-                        <div class="comment-header">
-                            <div class="comment-avatar">👨</div>
-                            <div>
-                                <div class="comment-author">Mike</div>
-                                <div class="comment-date">Yesterday</div>
-                            </div>
-                        </div>
-                        <div class="comment-text">
-                            Dude, that concert last night was EPIC! We need to hang out more often. Hit me up on AIM later! 🎸
+                    
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(135deg, #3498DB, #5DADE2);"></div>
+                        <div class="legend-text">
+                            <strong>Pharmaceutical</strong>
+                            <span>Tablets, Capsules, Clean Rooms</span>
                         </div>
                     </div>
-
-                    <div class="comment">
-                        <div class="comment-header">
-                            <div class="comment-avatar">👩</div>
-                            <div>
-                                <div class="comment-author">Sarah</div>
-                                <div class="comment-date">3 days ago</div>
-                            </div>
-                        </div>
-                        <div class="comment-text">
-                            OMG I love your profile song! Dashboard Confessional is the best! We have such similar taste in music! 🎵
+                    
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(135deg, #9B59B6, #BB8FCE);"></div>
+                        <div class="legend-text">
+                            <strong>Cosmetics</strong>
+                            <span>Skincare, Makeup, Toiletries</span>
                         </div>
                     </div>
-
-                    <button onclick="alert('View all comments')">View All Comments</button>
-                    <button onclick="alert('Leave a comment!')">Leave a Comment</button>
+                    
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(135deg, #34495E, #5D6D7E);"></div>
+                        <div class="legend-text">
+                            <strong>Logistics</strong>
+                            <span>Warehousing, Distribution, Fulfillment</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: linear-gradient(135deg, #16A085, #48C9B0);"></div>
+                        <div class="legend-text">
+                            <strong>SME Hub</strong>
+                            <span>Startups, Incubation, Shared Facilities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <h4>500</h4>
+                    <p>Total Acres</p>
+                </div>
+                <div class="stat-card">
+                    <h4>350</h4>
+                    <p>Manufacturing Acres (70%)</p>
+                </div>
+                <div class="stat-card">
+                    <h4>300+</h4>
+                    <p>Factory Units</p>
+                </div>
+                <div class="stat-card">
+                    <h4>20,000+</h4>
+                    <p>Jobs Created</p>
+                </div>
+                <div class="stat-card">
+                    <h4>RM 6.5B</h4>
+                    <p>Annual Manufacturing Output</p>
                 </div>
             </div>
         </div>
     </div>
-</body>
-</html>
+    
+    <div class="info-panel" id="infoPanel">
+        <button class="close-btn" onclick="closeInfo()">✕</button>
+        <div id="infoContent"></div>
+    </div>
+    
+    <script>
+        const zoneInfo = {
+            food: {
+                title: '🍽️ Food & Beverage Zone',
+                content: `
+                    <p><strong>Size:</strong> 120 Acres (24% of total park)</p>
+                    <p><strong>Capacity:</strong> 100+ manufacturing companies</p>
+                    <p><strong>Built-up Area:</strong> ~2.5 million sq ft</p>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Product Categories:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Dairy products (milk, cheese, yogurt)</li>
+                        <li>Beverages (juices, soft drinks, water)</li>
+                        <li>Processed foods (canned, frozen)</li>
+                        <li>Confectionery (chocolates, sweets)</li>
+                        <li>Bakery products</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Facilities:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>GMP & HACCP certified facilities</li>
+                        <li>Temperature-controlled production areas</li>
+                        <li>Automated packaging lines</li>
+                        <li>Quality control labs</li>
+                        <li>Cold storage integration</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>Annual Output:</strong> RM 2.5 billion</p>
+                `
+            },
+            meat: {
+                title: '🥩 Meat & Poultry Processing Zone',
+                content: `
+                    <p><strong>Size:</strong> 80 Acres (16% of total park)</p>
+                    <p><strong>Capacity:</strong> 30+ processing companies</p>
+                    <p><strong>Processing Capacity:</strong> 50,000 tons annually</p>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Facilities Include:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Modern halal slaughterhouse</li>
+                        <li>Meat processing plants</li>
+                        <li>Cold chain infrastructure</li>
+                        <li>Blast freezing facilities</li>
+                        <li>Packaging and labeling</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Features:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Fully automated operations</li>
+                        <li>Zero-discharge wastewater system</li>
+                        <li>Strict segregation protocols</li>
+                        <li>On-site veterinary services</li>
+                        <li>Traceability systems</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>Annual Output:</strong> RM 1.8 billion</p>
+                `
+            },
+            pharma: {
+                title: '💊 Pharmaceutical Zone',
+                content: `
+                    <p><strong>Size:</strong> 50 Acres (10% of total park)</p>
+                    <p><strong>Capacity:</strong> 40+ pharmaceutical companies</p>
+                    <p><strong>Built-up Area:</strong> ~1 million sq ft</p>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Product Range:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Tablets and capsules</li>
+                        <li>Syrups and suspensions</li>
+                        <li>Health supplements</li>
+                        <li>Vitamins and minerals</li>
+                        <li>Herbal medicines</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Infrastructure:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Class 100,000 clean rooms</li>
+                        <li>Stability testing chambers</li>
+                        <li>R&D laboratories</li>
+                        <li>Quality assurance facilities</li>
+                        <li>GMP-WHO compliant</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>Annual Output:</strong> RM 1.2 billion</p>
+                `
+            },
+            cosmetic: {
+                title: '💄 Cosmetics & Personal Care Zone',
+                content: `
+                    <p><strong>Size:</strong> 40 Acres (8% of total park)</p>
+                    <p><strong>Capacity:</strong> 60+ cosmetics companies</p>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Product Categories:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Skincare (creams, lotions, serums)</li>
+                        <li>Makeup and color cosmetics</li>
+                        <li>Hair care products</li>
+                        <li>Toiletries (soap, shampoo)</li>
+                        <li>Fragrances</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Facilities:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Formulation laboratories</li>
+                        <li>Blending and mixing equipment</li>
+                        <li>Automated filling lines</li>
+                        <li>Packaging facilities</li>
+                        <li>Safety testing labs</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>Annual Output:</strong> RM 700 million</p>
+                `
+            },
+            consumer: {
+                title: '📦 Consumer Goods Zone',
+                content: `
+                    <p><strong>Size:</strong> 40 Acres (8% of total park)</p>
+                    <p><strong>Capacity:</strong> 50+ manufacturing companies</p>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Products:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Household cleaning products</li>
+                        <li>Detergents and fabric care</li>
+                        <li>Packaging materials</li>
+                        <li>Ingredient manufacturing</li>
+                        <li>Industrial supplies</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Infrastructure:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Flexible manufacturing spaces</li>
+                        <li>Raw material storage</li>
+                        <li>Blending and mixing facilities</li>
+                        <li>Quality control labs</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>Annual Output:</strong> RM 500 million</p>
+                `
+            },
+            sme: {
+                title: '🚀 SME Innovation Hub',
+                content: `
+                    <p><strong>Size:</strong> 20 Acres (4% of total park)</p>
+                    <p><strong>Capacity:</strong> 50+ startups and small businesses</p>
+                    <p><strong>Unit Sizes:</strong> 5,000 - 15,000 sq ft</p>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Shared Facilities:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Pilot plant for product development</li>
+                        <li>Shared equipment and machinery</li>
+                        <li>Co-working laboratory spaces</li>
+                        <li>Incubation support services</li>
+                        <li>Business mentoring programs</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 15px; color: #2a5298;">Support Services:</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Fast-track certification</li>
+                        <li>Funding and financing access</li>
+                        <li>Market access programs</li>
+                        <li>Technical training</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>Annual Output:</strong> RM 300 million</p>
+                `
+            },
+            logistics: {
+                title: '🚛 Logistics & Warehousing Complex',
+                content: `
+                    <p><strong>Size:</strong> 80 Acres (
